@@ -2,7 +2,7 @@
     "cmake.deleteBuildDirOnCleanConfigure": true,
     "cmake.enableAutomaticKitScan": false,
     "cmake.generator": "Ninja",
-    "cmake.options.statusBarVisibility": "hidden",
+    "cmake.options.statusBarVisibility": "visible",
     "cmake.preferredGenerators": [
         "Ninja",
         "Ninja Multi-Config",
