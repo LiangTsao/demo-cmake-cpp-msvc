@@ -18,9 +18,6 @@ if(MSVC)
   add_compile_options(/utf-8)  # 强制MSVC使用UTF-8编码
 endif()
 
-# Set the build type
-set(CMAKE_BUILD_TYPE Debug)
-
 # Add the executable
 add_executable(demo main.cpp)
 
