@@ -1,0 +1,24 @@
+{
+    "cmake.deleteBuildDirOnCleanConfigure": true,
+    "cmake.enableAutomaticKitScan": false,
+    "cmake.generator": "Ninja",
+    "cmake.options.statusBarVisibility": "hidden",
+    "cmake.preferredGenerators": [
+        "Ninja",
+        "Ninja Multi-Config",
+        "Unix Makefiles",
+        "NMake Makefiles",
+        "NMake Makefiles JOM",
+        "MSYS Makefiles",
+        "MinGW Makefiles",
+        "MinGW Makefiles JOM",
+        "Visual Studio 16 2019",
+        "Visual Studio 17 2022"
+    ],
+    "cmake.setBuildTypeOnMultiConfig": true,
+    "cmake.useCMakePresets": "always",
+    "cmake.useVsDeveloperEnvironment": "never",
+    "files.associations": {
+        "iostream": "cpp"
+    }
+}

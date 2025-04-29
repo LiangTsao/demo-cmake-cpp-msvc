@@ -1,0 +1,3 @@
+C:/Users/liang/Desktop/gitee/demo-cmake-cpp-msvc/build/clang-debug/CMakeFiles/demo.dir
+C:/Users/liang/Desktop/gitee/demo-cmake-cpp-msvc/build/clang-debug/CMakeFiles/edit_cache.dir
+C:/Users/liang/Desktop/gitee/demo-cmake-cpp-msvc/build/clang-debug/CMakeFiles/rebuild_cache.dir
