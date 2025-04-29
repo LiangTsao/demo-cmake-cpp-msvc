@@ -37,8 +37,86 @@
               "CC": "clang",
               "CXX": "clang++"
           }
-      }
+      },
+      {
+        "name": "msvc-debug",
+        "displayName": "MSVC Debug",
+        "description": "Configure the project with MSVC in debug mode",
+        "generator": "Visual Studio 17 2022",
+        "binaryDir": "${sourceDir}/build/msvc-debug",
+        "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Debug"
+        }
+    },
+    {
+        "name": "msvc-release",
+        "displayName": "MSVC Release",
+        "description": "Configure the project with MSVC in release mode",
+        "generator": "Visual Studio 17 2022",
+        "binaryDir": "${sourceDir}/build/msvc-release",
+        "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Release"
+        }
+    },
+    {
+        "name": "gcc-debug",
+        "displayName": "GCC Debug",
+        "description": "Build with GCC in debug mode",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/build/gcc-debug",
+        "cacheVariables": {
+            "CMAKE_C_COMPILER": "gcc",
+            "CMAKE_CXX_COMPILER": "g++",
+            "CMAKE_BUILD_TYPE": "Debug"
+        }
+    },
+    {
+        "name": "gcc-release",
+        "displayName": "GCC Release",
+        "description": "Build with GCC in release mode",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/build/gcc-release",
+        "cacheVariables": {
+            "CMAKE_C_COMPILER": "gcc",
+            "CMAKE_CXX_COMPILER": "g++",
+            "CMAKE_BUILD_TYPE": "Release"
+        }
+    },
+    {
+        "name": "clang-tidy",
+        "displayName": "Clang Tidy",
+        "description": "Run Clang Tidy checks",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/build/clang-tidy",
+        "cacheVariables": {
+            "CMAKE_C_COMPILER": "clang",
+            "CMAKE_CXX_COMPILER": "clang++",
+            "CMAKE_BUILD_TYPE": "Debug"
+        },
+        "environment": {
+            "CC": "clang",
+            "CXX": "clang++"
+        }
+    },
+    {
+        "name": "clang-format",
+        "displayName": "Clang Format",
+        "description": "Run Clang Format checks",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/build/clang-format",
+        "cacheVariables": {
+            "CMAKE_C_COMPILER": "clang",
+            "CMAKE_CXX_COMPILER": "clang++",
+            "CMAKE_BUILD_TYPE": "Debug"
+        },
+        "environment": {
+            "CC": "clang",
+            "CXX": "clang++"
+        }
+    }
   ],
+
+
   "buildPresets": [
       {
           "name": "clang-debug-build",
@@ -47,6 +125,44 @@
       {
           "name": "clang-release-build",
           "configurePreset": "clang-release"
+      },
+      {
+          "name": "msvc-debug-build",
+          "configurePreset": "msvc-debug"
+      },
+      {
+          "name": "msvc-release-build",
+          "configurePreset": "msvc-release"
+      },
+      {
+          "name": "gcc-debug-build",
+          "configurePreset": "gcc-debug"
+      },
+      {
+          "name": "gcc-release-build",
+          "configurePreset": "gcc-release"
+      },
+      {
+          "name": "clang-tidy-build",
+          "configurePreset": "clang-tidy"
+      },
+      {
+          "name": "clang-format-build",
+          "configurePreset": "clang-format"
       }
-  ]
+  ],
+
+
+  
+  "testPresets": [
+    {
+        "name": "clang-debug-test",
+        "displayName": "clang Debug Test",
+        "description": "Run tests with clang in debug mode",
+        "configurePreset": "clang-debug",
+        "output": {
+            "outputOnFailure": true
+        }
+    }
+]
 }    
