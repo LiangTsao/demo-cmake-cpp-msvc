@@ -6,6 +6,7 @@
       "patch": 0
   },
   "configurePresets": [
+    
       {
           "name": "clang-debug",
           "displayName": "Clang Debug",

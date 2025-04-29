@@ -4,8 +4,8 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/include/**",
-                "C:/Users/liang/Desktop/gitee/asio/asio/include/**"
+                "C:/asio-1.34.2/include/**",
+                "C:/boost_1_88_0/**"
             ],
             "defines": [
                 "_DEBUG",

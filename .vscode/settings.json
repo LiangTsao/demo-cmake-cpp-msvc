@@ -19,6 +19,7 @@
     "cmake.useCMakePresets": "always",
     "cmake.useVsDeveloperEnvironment": "never",
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "memory": "cpp"
     }
 }
