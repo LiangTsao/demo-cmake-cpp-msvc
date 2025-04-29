@@ -1,6 +1,5 @@
 # Ignore build directory
-build
-build/clang-debug
+build/
 
 # Prerequisites
 *.d
