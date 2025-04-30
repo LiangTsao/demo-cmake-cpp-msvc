@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.20)
 
 # Set the project name
-project(demo-cmake-cpp-msvc)
+project(demo-cmake-cpp)
 
 # Specify the C++ standard
 set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Add include directories
 include_directories(C:/asio-1.34.2/include)
@@ -27,3 +27,10 @@ endif()
 add_executable(demo main.cpp)
 
 
+# Link against the Boost libraries
+find_package(Boost REQUIRED COMPONENTS system filesystem)
+if(Boost_FOUND)
+    include_directories(${Boost_INCLUDE_DIRS})
+    target_link_libraries(demo ${Boost_LIBRARIES})
+else()
+    message(FATAL_ERROR "Boost not found")
