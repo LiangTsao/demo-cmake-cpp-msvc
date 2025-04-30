@@ -1,12 +1,7 @@
 {
-  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-  "C_Cpp.default.includePath": [
-    "${workspaceFolder}/**",
-    "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/include/**",
-    "C:/asio-1.34.2/include/**",
-    "C:/boost_1_88_0/**"
-  ],
-  "C_Cpp.default.defines": [],
-  "C_Cpp.default.compilerPath": "",
-  "cmake.configureOnEdit": false
+  "cmake.configureOnEdit": false,
+  "cmake.automaticReconfigure": false,
+  "cmake.configureOnOpen": false,
+  "cmake.deleteBuildDirOnCleanConfigure": true,
+  "cmake.options.statusBarVisibility": "visible"
 }
