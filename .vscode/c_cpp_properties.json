@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/include/**",
+                "C:/asio-1.34.2/include/**",
+                "C:/boost_1_88_0/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.22621.0", 
+            "intelliSenseMode": "windows-msvc-x64" 
+        }
+    ],
+    "version": 4
+}
