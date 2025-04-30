@@ -26,11 +26,3 @@ endif()
 # Add the executable
 add_executable(demo main.cpp)
 
-
-# Link against the Boost libraries
-find_package(Boost REQUIRED COMPONENTS system filesystem)
-if(Boost_FOUND)
-    include_directories(${Boost_INCLUDE_DIRS})
-    target_link_libraries(demo ${Boost_LIBRARIES})
-else()
-    message(FATAL_ERROR "Boost not found")
