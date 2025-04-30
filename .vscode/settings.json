@@ -3,5 +3,10 @@
   "cmake.automaticReconfigure": false,
   "cmake.configureOnOpen": true,
   "cmake.deleteBuildDirOnCleanConfigure": true,
-  "cmake.options.statusBarVisibility": "visible"
+  "cmake.options.statusBarVisibility": "visible",
+  "files.associations": {
+    "iostream": "cpp",
+    "string": "cpp",
+    "memory": "cpp"
+  }
 }
