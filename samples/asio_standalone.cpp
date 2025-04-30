@@ -9,7 +9,10 @@ class Session : public std::enable_shared_from_this<Session> {
 public:
     explicit Session(tcp::socket socket) : socket_(std::move(socket)) {}
 
-    void start() { do_read(); }
+    void start() { 
+        std::cout << "Client connected: " << socket_.remote_endpoint().address().to_string() << ":" << socket_.remote_endpoint().port() << std::endl;
+        do_read(); 
+    }
 
 private:
     void do_read() {
@@ -63,6 +66,7 @@ int main() {
     try {
         asio::io_context io_context;
 
+        std::cout << "Server is starting on port 12345..." << std::endl;
         Server server(io_context, 12345);
 
         io_context.run();
