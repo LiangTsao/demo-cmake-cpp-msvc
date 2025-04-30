@@ -1,25 +1,23 @@
-#include <boost/asio.hpp>
-#include <memory>
+#include <asio.hpp>
 #include <iostream>
+#include <memory>
+#include <string>
 
-using boost::asio::ip::tcp;
+using asio::ip::tcp;
 
 class Session : public std::enable_shared_from_this<Session> {
 public:
-    Session(tcp::socket socket) : socket_(std::move(socket)) {}
+    explicit Session(tcp::socket socket) : socket_(std::move(socket)) {}
 
-    void start() {
-        do_read();
-    }
+    void start() { do_read(); }
 
 private:
     void do_read() {
         auto self(shared_from_this());
-        socket_.async_read_some(
-            boost::asio::buffer(data_, max_length),
+        socket_.async_read_some(asio::buffer(data_, max_length),
             [this, self](std::error_code ec, std::size_t length) {
                 if (!ec) {
-                    std::cout << "Received: " << std::string(data_, length) << std::endl;
+                    std::cout << "Received message: " << std::string(data_, length) << " from " << socket_.remote_endpoint().address().to_string() << std::endl;
                     do_write(length);
                 }
             });
@@ -27,9 +25,7 @@ private:
 
     void do_write(std::size_t length) {
         auto self(shared_from_this());
-        boost::asio::async_write(
-            socket_,
-            boost::asio::buffer(data_, length),
+        asio::async_write(socket_, asio::buffer(data_, length),
             [this, self](std::error_code ec, std::size_t /*length*/) {
                 if (!ec) {
                     do_read();
@@ -44,7 +40,7 @@ private:
 
 class Server {
 public:
-    Server(boost::asio::io_context& io_context, short port)
+    Server(asio::io_context& io_context, short port)
         : acceptor_(io_context, tcp::endpoint(tcp::v4(), port)) {
         do_accept();
     }
@@ -65,13 +61,14 @@ private:
 
 int main() {
     try {
-        boost::asio::io_context io_context;
-        Server server(io_context, 8080);
-        std::cout << "TCP Echo Server running on port 8080..." << std::endl;
+        asio::io_context io_context;
+
+        Server server(io_context, 12345);
+
         io_context.run();
+    } catch (std::exception& e) {
+        std::cerr << "Exception: " << e.what() << "\n";
     }
-    catch (std::exception& e) {
-        std::cerr << "Exception: " << e.what() << std::endl;
-    }
+
     return 0;
 }
