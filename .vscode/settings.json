@@ -1,7 +1,7 @@
 {
   "cmake.configureOnEdit": false,
   "cmake.automaticReconfigure": false,
-  "cmake.configureOnOpen": false,
+  "cmake.configureOnOpen": true,
   "cmake.deleteBuildDirOnCleanConfigure": true,
   "cmake.options.statusBarVisibility": "visible"
 }
